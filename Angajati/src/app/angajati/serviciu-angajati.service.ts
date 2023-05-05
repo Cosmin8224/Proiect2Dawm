@@ -12,6 +12,7 @@ export class ServiciuAngajatiService {
     { id: 4, nume: 'Stefanescu Elena', salariu: 3500, functie: 'Inginer', departament: 'Tehnic' },
     { id: 5, nume: 'Petrescu Ioana', salariu: 2000, functie: 'Secretar', departament: 'Administrativ' }
   ];
+  
   modificareAngajat: any;
 
   constructor() { }

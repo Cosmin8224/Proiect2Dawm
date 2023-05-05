@@ -43,11 +43,16 @@ export class CaracteristiciAngajatiComponent {
       }
     });
   }
-  paginare() {
-    throw new Error('Method not implemented.');
+  calculeazaNumarPagini(): void {
+    const numarAngajatiPePagina = 5; // Set the number of employees to display per page
+    this.numarPagini = Math.ceil(this.numarAngajati / numarAngajatiPePagina);
   }
-  calculeazaNumarPagini() {
-    throw new Error('Method not implemented.');
+  
+  paginare(): void {
+    const numarAngajatiPePagina = 5; // Set the number of employees to display per page
+    const indexUltimulAngajat = this.paginaCurenta * numarAngajatiPePagina;
+    const indexPrimulAngajat = indexUltimulAngajat - numarAngajatiPePagina;
+    this.angajati = this.serviciuAngajati.getAngajati().slice(indexPrimulAngajat, indexUltimulAngajat);
   }
   
 }
