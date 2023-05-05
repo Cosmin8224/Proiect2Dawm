@@ -1,1 +1,33 @@
-<p>tabel works!</p>
+<button nz-button nzType="primary" (click)="deschideModalAdaugare()">
+  <i nz-icon nzType="plus-circle" nzTheme="outline"></i> Adaugă
+</button>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nume</th>
+      <th>Salariu</th>
+      <th>Functie</th>
+      <th>Departament</th>
+      <th>Acțiuni</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let angajat of angajatiPaginati">
+      <td>{{ angajat.id }}</td>
+      <td>{{ angajat.nume }}</td>
+      <td>{{ angajat.functie }}</td>
+      <td>{{ angajat.departament }}</td>
+      <td>
+        <button nz-button nzType="link" (click)="deschideModalEditare(angajat.id)">
+          <i nz-icon nzType="edit" nzTheme="outline"></i>
+        </button>
+        <button nz-button nzType="link" nzDanger (click)="stergeAngajat(angajat.id)">
+          <i nz-icon nzType="delete" nzTheme="outline"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+  
+</table>
